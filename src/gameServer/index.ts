@@ -18,7 +18,7 @@ class GameServer {
 
       ws.on('message', (message: string) => {
         console.log(`Received message: ${message}`);
-        ws.send(`Server received your message: ${message}`);
+        // ws.send(`Server received your message: ${message}`);
       });
 
       ws.on('close', () => {

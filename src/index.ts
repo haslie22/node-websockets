@@ -2,7 +2,7 @@
 
 import HTTPServer from './httpServer/index';
 import GameServer from './gameServer';
-import { DefaultPorts } from './utils/constants/constants';
+import { DefaultPorts } from './shared/constants/constants';
 import { WebSocketServer } from 'ws';
 
 const BASE_HTTP_PORT = parseInt(process.env.PORT_HTTP, 10) || DefaultPorts.HTTP;
