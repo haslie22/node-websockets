@@ -11,6 +11,7 @@ export interface RoomUser {
 }
 
 export interface AddUserToRoomData {
+  // request
   indexRoom: RoomId;
 }
 

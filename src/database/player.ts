@@ -12,8 +12,12 @@ class PlayersTable {
     this.playersList.push(player);
   }
 
-  getPlayer(id: PlayerId): PlayerDetailed | undefined {
+  getPlayerById(id: PlayerId): PlayerDetailed | undefined {
     return this.playersList.find((detailedInfo) => detailedInfo.player.id === id);
+  }
+
+  getPlayerByName(name: string): PlayerDetailed | undefined {
+    return this.playersList.find((detailedInfo) => detailedInfo.player.name === name);
   }
 
   removePlayer(id: PlayerId): void {

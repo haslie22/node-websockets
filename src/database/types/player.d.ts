@@ -1,6 +1,7 @@
-import { HashedPassword, PlayerId } from '../../shared/types/types';
+import { PlayerId } from '../../shared/types/types';
 
 export interface RegistrationData {
+  // request
   name: string;
   password: string;
 }
@@ -10,9 +11,9 @@ export interface Player {
   id: PlayerId;
 }
 
-export interface PlayerDetailed extends Player {
+export interface PlayerDetailed {
   player: Player;
-  password: HashedPassword;
+  password: string;
 }
 
 export interface RegistrationResponseData {

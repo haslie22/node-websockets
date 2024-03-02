@@ -17,10 +17,14 @@ export interface GameData {
   idPlayer: PlayerId;
 }
 
-export interface AttackData extends ShipPosition {
+export interface randomAttackData {
+  // request
   gameId: GameId;
   indexPlayer: PlayerId;
 }
+
+// request
+export type AttackData = ShipPosition & randomAttackData;
 
 export interface AttackFeedbackData {
   position: ShipPosition;

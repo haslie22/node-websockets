@@ -20,6 +20,7 @@ export interface Ship {
 }
 
 export interface ShipBoard {
+  // request
   gameId: GameId;
   ships: Ship[];
   indexPlayer: PlayerId;

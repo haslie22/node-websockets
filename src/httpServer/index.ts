@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises';
 import { dirname, resolve } from 'path';
 import { createServer, Server, IncomingMessage, ServerResponse } from 'http';
+import { Notifications } from '../shared/constants/constants';
 
 class HTTPServer {
   server: Server;
@@ -26,13 +27,13 @@ class HTTPServer {
 
   start(port: number): void {
     this.server.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
+      console.log(`${Notifications.HTTP_RUNNING} ${port}`);
     });
   }
 
   stop(): void {
     this.server.close(() => {
-      console.log('Server has stopped');
+      console.log(`${Notifications.HTTP_STOP}`);
     });
   }
 }

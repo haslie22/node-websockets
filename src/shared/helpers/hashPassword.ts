@@ -1,18 +1,14 @@
-import { randomBytes, pbkdf2 } from 'crypto';
+import { pbkdf2, randomBytes } from 'crypto';
 
-import { HashedPassword } from '../types/types';
-
-const hashPassword = (password: string): Promise<HashedPassword> => {
+const hashPassword = (password: string): Promise<string> => {
   const salt = randomBytes(16).toString('hex');
+
   return new Promise((resolve, reject) => {
     pbkdf2(password, salt, 1000, 64, 'sha512', (err, derivedKey) => {
       if (err) {
         reject(err);
       } else {
-        resolve({
-          salt: salt,
-          hash: derivedKey.toString('hex'),
-        });
+        resolve(derivedKey.toString('hex'));
       }
     });
   });

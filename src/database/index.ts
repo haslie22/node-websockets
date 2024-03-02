@@ -5,11 +5,11 @@ import ShipsTable from './ship';
 import WinnersTable from './winner';
 
 class Database {
-  private playersTable: PlayersTable;
-  private roomsTable: RoomsTable;
-  private shipsTable: ShipsTable;
-  private gamesTable: GamesTable;
-  private winnersTable: WinnersTable;
+  playersTable: PlayersTable;
+  roomsTable: RoomsTable;
+  shipsTable: ShipsTable;
+  gamesTable: GamesTable;
+  winnersTable: WinnersTable;
 
   constructor(
     playersTable: PlayersTable,
