@@ -1,12 +1,18 @@
-import { WebSocketServer, Server } from 'ws';
+import { WebSocketServer, WebSocket, Server } from 'ws';
 import WSServerHandler from './WSServerHandler';
 import { Notifications } from '../shared/constants/constants';
 
 class WSServer {
-  private server: Server;
-  private messageCallback: (type: unknown) => (data: unknown) => void;
+  server: Server;
+  private messageCallback: (
+    type: unknown,
+  ) => (data: unknown, socket: WebSocket, currentUserId: string) => Promise<string>;
 
-  constructor(port: number, clientTracking: boolean, cb: (type: unknown) => (data: unknown) => void) {
+  constructor(
+    port: number,
+    clientTracking: boolean,
+    cb: (type: unknown) => (data: unknown, socket: WebSocket, currentUserId: string) => Promise<string>,
+  ) {
     this.server = new WebSocketServer({ port, clientTracking });
     this.messageCallback = cb;
 

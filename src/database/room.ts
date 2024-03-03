@@ -1,4 +1,5 @@
-import { PlayerId, RoomId } from '../shared/types/types';
+import { RoomId } from '../shared/types/types';
+import { Player } from './types/player';
 import { Room } from './types/room';
 
 class RoomsTable {
@@ -21,9 +22,9 @@ class RoomsTable {
     if (roomIndex !== -1) this.roomsList.splice(roomIndex, 1);
   }
 
-  addToRoom(roomId: RoomId, playerId: PlayerId): void {
+  addToRoom(roomId: RoomId, player: Player): void {
     const room = this.getRoom(roomId);
-    if (room) room.players.push(playerId);
+    if (room) room.players.push(player);
   }
 
   getAvailableRooms(): Room[] {

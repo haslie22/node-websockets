@@ -17,6 +17,7 @@ export interface PlayerDetailed {
 }
 
 export interface RegistrationResponseData {
+  // response
   name: string;
   index: PlayerId;
   error: boolean;

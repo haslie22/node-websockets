@@ -1,8 +1,9 @@
 import { GameId, PlayerId, RoomId } from '../../shared/types/types';
+import { Player } from './player';
 
 export interface Room {
   id: RoomId;
-  players: PlayerId[];
+  players: Player[];
 }
 
 export interface RoomUser {

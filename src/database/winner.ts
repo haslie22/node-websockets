@@ -1,4 +1,3 @@
-import { WinnerId } from '../shared/types/types';
 import { Winner } from './types/winner';
 
 class WinnersTable {
@@ -12,12 +11,12 @@ class WinnersTable {
     this.winnersList.push(winner);
   }
 
-  getWinner(id: WinnerId): Winner | undefined {
-    return this.winnersList.find((winner) => winner.winPlayer === id);
+  getWinnerByName(name: string): Winner | undefined {
+    return this.winnersList.find((winner) => winner.name === name);
   }
 
-  removeWinner(id: WinnerId): void {
-    const winnerIndex = this.winnersList.findIndex((winner) => winner.winPlayer === id);
+  removeWinner(name: string): void {
+    const winnerIndex = this.winnersList.findIndex((winner) => winner.name === name);
     if (winnerIndex !== -1) this.winnersList.splice(winnerIndex, 1);
   }
 
